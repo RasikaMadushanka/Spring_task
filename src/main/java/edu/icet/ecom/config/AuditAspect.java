@@ -16,8 +16,6 @@ public class AuditAspect {
 
     @Autowired
     private activitylog_repository auditRepository;
-
-    // This method runs only if a method with @AuditFailure throws an Exception
     @AfterThrowing(pointcut = "@annotation(edu.icet.ecom.Config.AuditFailure) && args(bookingDto,..)", throwing = "ex")
     public void logBookingFailure(booking_dto bookingDto, Exception ex) {
         activitylog_entity log = new activitylog_entity();

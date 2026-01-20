@@ -17,9 +17,7 @@ public class event_service {
     public event_dto addEvent(event_dto eventDto) {
         
         event_entity entity = modelMapper.map(eventDto, event_entity.class);
-        // Save
         event_entity saved = eventRepository.save(entity);
-        // Map back to Dto
         return modelMapper.map(saved, event_dto.class);
 
     }
