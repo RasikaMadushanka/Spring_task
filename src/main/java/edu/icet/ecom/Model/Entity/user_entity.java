@@ -1,6 +1,13 @@
 package edu.icet.ecom.Model.Entity;
 
 import jakarta.persistence.*;
+import lombok.*;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 @Entity
 @Table(name = "users")
 public class user_entity {

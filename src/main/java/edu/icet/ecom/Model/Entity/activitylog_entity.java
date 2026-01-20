@@ -1,8 +1,14 @@
 package edu.icet.ecom.Model.Entity;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.time.LocalDateTime;
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 @Entity
 @Table(name = "audit_logs")
 public class activitylog_entity {
@@ -10,12 +16,12 @@ public class activitylog_entity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String action; // e.g., "HOLD_FAILED"
+    private String action;
 
-    private Long userId; // The ID of the user who attempted the action
+    private Long userId;
 
     @Column(columnDefinition = "TEXT")
-    private String details; // Stores the error message or reason for failure
+    private String details;
 
     private LocalDateTime timestamp;
 }

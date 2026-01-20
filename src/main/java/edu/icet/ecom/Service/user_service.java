@@ -5,7 +5,9 @@ import edu.icet.ecom.Model.Entity.user_entity;
 import edu.icet.ecom.Repository.user_repository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class user_service {
     @Autowired
     user_repository userRepository;

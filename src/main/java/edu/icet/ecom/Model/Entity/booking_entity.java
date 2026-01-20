@@ -1,8 +1,14 @@
 package edu.icet.ecom.Model.Entity;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.math.BigDecimal;
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 @Entity
 @Table(name = "bookings")
 public class booking_entity {

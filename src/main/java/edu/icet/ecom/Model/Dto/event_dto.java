@@ -1,8 +1,15 @@
 package edu.icet.ecom.Model.Dto;
 
+import lombok.*;
+
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 public class event_dto {
     private Long id;
 
