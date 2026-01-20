@@ -16,7 +16,7 @@ public class AuditAspect {
 
     @Autowired
     private activitylog_repository auditRepository;
-    @AfterThrowing(pointcut = "@annotation(edu.icet.ecom.Config.AuditFailure) && args(bookingDto,..)", throwing = "ex")
+    @AfterThrowing(pointcut = "@annotation(edu.icet.ecom.config.AuditFailure) && args(bookingDto,..)", throwing = "ex")
     public void logBookingFailure(booking_dto bookingDto, Exception ex) {
         activitylog_entity log = new activitylog_entity();
 
@@ -27,5 +27,7 @@ public class AuditAspect {
 
         auditRepository.save(log);
         System.out.println("⚠️ Audit Shadow: Logged a failure for User ID " + log.getUserId());
+        auditRepository.save(log);
+        System.out.println("✅ SHADOW SAVED: " + ex.getMessage());
     }
 }
