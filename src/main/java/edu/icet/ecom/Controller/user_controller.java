@@ -12,7 +12,7 @@ public class user_controller {
     @Autowired
     user_service userService;
 
-    @PostMapping
+    @PostMapping("/add")
     public user_dto createUser(@RequestBody user_dto user) {
         return userService.adduser(user);
     }

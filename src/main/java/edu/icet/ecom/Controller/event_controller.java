@@ -12,12 +12,12 @@ public class event_controller {
     @Autowired
     event_service eventService;
 
-    @PostMapping
+    @PostMapping("/add")
     public event_dto addEvent(@RequestBody event_dto eventDto) {
         return eventService.addEvent(eventDto);
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public List<event_dto> getAllEvents() {
         return eventService.getAllEvents();
     }

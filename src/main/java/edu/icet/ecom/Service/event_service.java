@@ -5,10 +5,11 @@ import edu.icet.ecom.Model.Entity.event_entity;
 import edu.icet.ecom.Repository.event_repository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
-
+@Service
 public class event_service {
     @Autowired
     event_repository eventRepository;

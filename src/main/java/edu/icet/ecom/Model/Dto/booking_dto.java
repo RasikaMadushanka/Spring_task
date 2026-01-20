@@ -16,7 +16,6 @@ public class booking_dto {
     private seat_entity seat;
 
     private BigDecimal amountPaid;
-
-    // Using String for status (e.g., "CONFIRMED", "CANCELLED")
+    private boolean priorityAccess;
     private String status;
 }

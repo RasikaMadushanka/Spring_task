@@ -13,4 +13,5 @@ public class seat_dto {
     private String status;
     private LocalDateTime holdExpiry;
     private Long version;
+    private Long eventId;
 }

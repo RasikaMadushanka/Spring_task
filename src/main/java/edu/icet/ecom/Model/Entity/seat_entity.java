@@ -12,17 +12,19 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "seats")
 public class seat_entity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        private Long id;
 
-    // Remove @Enumerated(EnumType.STRING) when using String type
-    @Column(name = "status")
-    private String status; // Stores "AVAILABLE", "HELD", or "SOLD"
+        private String status;
+        private LocalDateTime holdExpiry;
 
-    // Other fields...
-    private LocalDateTime holdExpiry;
+        @Version
+        private Long version;
 
-    @Version
-    private Long version;
-}
+        // ADD THIS RELATIONSHIP
+        @ManyToOne
+        @JoinColumn(name = "event_id")
+        private event_entity event;
+    }
+
