@@ -1,8 +1,14 @@
 package edu.icet.ecom.Model.Entity;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.time.LocalDateTime;
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 @Entity
 @Table(name = "seats")
 public class seat_entity {
