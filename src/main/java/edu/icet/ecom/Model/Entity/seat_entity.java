@@ -21,8 +21,6 @@ public class seat_entity {
 
         @Version
         private Long version;
-
-        // ADD THIS RELATIONSHIP
         @ManyToOne
         @JoinColumn(name = "event_id")
         private event_entity event;
