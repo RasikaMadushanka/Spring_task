@@ -39,6 +39,11 @@ public class booking_service {
         if (event == null) {
             throw new RuntimeException("Seat is not linked to an event. Price cannot be calculated.");
         }
+        if ("HELD".equals(seat.getStatus())) {
+            if (seat.getHoldExpiry() != null && seat.getHoldExpiry().isBefore(java.time.LocalDateTime.now())) {
+                throw new RuntimeException("Your 10-minute hold session has expired. Please hold the seat again.");
+            }
+        }
         if ("SOLD".equals(seat.getStatus())) {
             throw new RuntimeException("This seat is already sold!");
         }
